@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+#header {
+    background-color:cornflowerblue;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:20px;
+    background-color:lightskyblue;
+    height:400px;
+    width:170px;
+    float:left;
+    padding:5px;
+} 	 
+#footer {
+    background-color:cornflowerblue;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div id="header">
+<h1>课程表管理系统</h1>
+</div>
+
+
+<div id="nav">
+<form action="/course.edit/{{stu_sn}}/{{tea_sn}}/{{cou_sn}}" method="post">
+	星期：<input type="text" name="week"    value="{{week}}">
+	节次：<input type="text" name="section" value="{{section}}">
+	地点：<input type="text" name="place"   value="{{place}}">
+        <input type="submit" value="修改">
+      </form>
+<b><a href="/">主页</a></b>
+</div>
+
+<div id="footer">
+    God reward those who work hard
+</div>
+
+</body>
+</html>
