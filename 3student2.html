@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{ title }}</title>
+<style>
+#header {
+    background-color:cornflowerblue;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:20px;
+    background-color:lightskyblue;
+    height:400px;
+    width:150px;
+    float:left;
+    padding:5px;
+}
+
+#section {
+    width:623px;
+    float:left;
+    padding:10px;	 	 
+}
+	 	 
+#footer {
+    background-color:cornflowerblue;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
+table,th,td
+{
+	border:1px solid black;
+}
+</style>
+</head>
+
+<body>
+
+<div id="header">
+<h1>课程表管理系统</h1>
+</div>
+<div id="nav">
+<dr>
+<h1><a href="/">主页</a></h1>
+</div>
+
+
+
+ <table id="section">
+<tr><th>课程</th><th>教师</th><th>星期</th><th>节次</th><th>地点</th>
+{% for item in items %}
+<tr>
+<td>{{ item[2] }}</td>
+<td>{{ item[3] }}</td>
+<td>{{ item[4] }}</td>
+<td>{{ item[5] }}</td>
+<td>{{ item[6] }}</td>
+
+</tr>
+{% end %}
+</table>   
+
+
+<div id="footer">
+     Easy come, easy go.
+</div>
+</body>
+</html>
