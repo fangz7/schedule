@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{ title }}</title>    
+<style>
+#header {
+    background-color:cornflowerblue;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:20px;
+    background-color:lightskyblue;
+    height:400px;
+    width:170px;
+    float:left;
+    padding:5px;
+}
+
+
+#section {
+    width:700px;
+    float:left;
+    padding:10px;	 	 
+}
+	 	 
+#footer {
+    background-color:cornflowerblue;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
+	
+	table,th,td
+{
+	border:1px solid black;
+}
+</style>
+</head>
+
+<body>
+
+<div id="header">
+<h1>课程表管理系统</h1>
+</div>
+
+
+<div id="nav">
+<form action="/course.add" method="post">
+    课程：<input type="text"    name="cou_sn">
+	教师：<input type="text"    name="tea_sn">
+	班级：<input type="text"    name="stu_sn">
+	星期：<input type="text"    name="week">
+	节次：<input type="text"    name="section">
+	地点：<input type="text"    name="place">
+         <input type="submit"  value="添加课程">
+</form>
+<br>
+<br>
+<h1><a href="/">主页</a></h1>
+</div>
+
+<table id="section">
+<tr><th>课程</th><th>教师</th><th>班级</th><th>星期</th><th>节次</th><th>地点</th><th>操作</th>
+{% for item in items %}
+<tr>
+<td>{{ item[3] }}</td>
+<td>{{ item[4] }}</td>
+<td>{{ item[5] }}</td>
+<td>{{ item[6] }}</td>
+<td>{{ item[7] }}</td>
+<td>{{ item[8] }}</td>
+<td>
+[<a href="/course.edit/{{item[0]}}/{{item[1]}}/{{item[2]}}">修改</a>]
+[<a href="/course.del/{{item[0]}}/{{item[1]}}/{{item[2]}}">删除</a>]
+</td>
+</tr>
+{% end %}
+</table> 
+<table id="section">
+    <tr><th>名称</th><th>信息01</th><th>信息02</th><th>土地01</th><th>土地02</th><th>陈老师</th><th>赵老师</th><th>高老师</th><th>高数</th><th>外语</th><th>线代</th>
+    <tr><th>代码</th><th>101</th><th>102</th><th>103</th><th>104</th><th>101</th><th>102</th><th>103</th><th>101</th><th>102</th><th>103</th>
+    </tr>
+    </table>   
+    
+
+
+<div id="footer">
+    Genius is an infinite diligent ability
+</div>
+
+</body>
+</html>
